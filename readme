@@ -1,0 +1,18 @@
+Tareas Faltantes:
+    Tareas Backend      
+        1. Recuperar contraseña endpoint
+        2. Funcion para generar un correo de Bienvenida automatico
+
+    Tareas Frontend
+        1. Integrar en AuthForm una forma de recuperar la contraseña( y de actualizarla )
+        2. Realizar el Tablero de Ajedrez con su jugabilidad
+            a. Realizar el CallBack del Frontend para poder cambiar 
+            de color las celdas a las que se puede mover una Ficha
+
+            b. Drag And Drop de las Imagenes
+
+            c. Sonido de Drop
+
+            d. Ajustar Jugabilidad con el endpoint, y logica para 
+            juegos multijugador y contra maquina
+        3. Realizar la pagina de partida
