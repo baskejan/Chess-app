@@ -3,3 +3,4 @@
 config.env
 angular-frontend/tsconfig.json
 angular-frontend/tsconfig.app.jso
+*.txt
