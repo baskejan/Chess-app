@@ -1,0 +1,67 @@
+.tablero {
+  display: grid;
+  grid-template-rows: repeat(8, 80px);
+  border-radius: 10%;
+  border-color: black;
+}
+
+.fila{
+    display:grid;
+    grid-template-columns: repeat(8, 80px);
+}
+
+.casilla{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+}
+
+
+.fila:nth-child(odd) .casilla:nth-child(even) {  
+  background-color: rgb(205, 194, 194);
+}
+
+.fila:nth-child(odd) .casilla:nth-child(odd) {
+    background-color: rgb(71, 125, 79);
+}
+
+.fila:nth-child(even) .casilla:nth-child(odd){
+    background-color: rgb(205, 194, 194);
+}
+
+.fila:nth-child(even) .casilla:nth-child(even){
+    background-color: rgb(71, 125, 79);
+}
+
+.casilla.from{
+    background-color: rgb(255,255, 0, 0.3) !important;
+}
+
+
+h1{
+    display: center;
+    color: white;    
+}
+
+/* La pieza que llevas con el ratón */
+.cdk-drag-preview {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000 !important; /*Para que se muestre por encima de todo dentro de las casillas*/
+  pointer-events: none; /* Crucial para que el drop detecte la casilla debajo */
+}
+
+/* Evita que el placeholder (el espacio que deja la pieza) ocupe lugar */
+.cdk-drag-placeholder {
+  display: none; 
+}
+
+/* Asegura que las imágenes no tengan el comportamiento de arrastre nativo del navegador */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

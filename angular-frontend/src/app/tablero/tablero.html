@@ -1,0 +1,22 @@
+<div class="tablero">
+    @for (row of FenBoard(); track i; let i =$index) {
+        <div class="fila" >
+            @for (piece of row; track j; let j = $index) {
+                <div cdkDropList [id]="generatePosition(i,j)" [cdkDropListConnectedTo]="SquaresToMove"  [ngClass] ="getClasses(i, j)"   
+                (click)= "selectSquare(i, j)" 
+                (cdkDropListDropped)="drop($event)"
+                >   
+                    @if(piece.toUpperCase() == piece && piece != " "){ 
+                        <img cdkDrag src="{{'chess_maestro_bw/' + 'w' + piece + '.svg'}}" 
+                        width="70px" height="70px" >
+                    }@else if(piece != " "){
+                        <img cdkDrag src="{{'chess_maestro_bw/' + 'b' + piece.toUpperCase() + '.svg'}}" 
+                        width="70px" height="70px">
+                    }@else if(SelectedSquare && verifyTo(i, j)){
+                        <img src="dot.png"  width = "70px" height="70px">
+                    }              
+                </div>
+            }
+        </div>
+    }
+</div>
